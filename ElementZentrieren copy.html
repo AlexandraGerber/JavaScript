@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vertikal und horizontal zentrieren</title>
+    <style>
+        body {
+            margin: 0;
+            position: relative;
+        }
+
+        #x {
+            width: 300px;
+            height: 150px;
+            background-color: #f8a;
+            position: absolute;
+            /* wichtig für genaue Positionierung */
+            text-align: center;
+            padding: 20px;
+        }
+        #y {
+            
+            position: absolute;
+            /* wichtig für genaue Positionierung */
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="x">Ich bin mittig!</div>
+
+
+    <div id=y style="background-color: red">Foo<br>bar</div>
+    <script>
+        let node = document.getElementById("y");
+        node.style.position = "absolute";
+        node.style.top = ((document.body.offsetHeight - node.offsetHeight) / 2) + "px";
+        function zentriereElement() {
+            const el = document.getElementById('x');
+            const bodyHeight = document.body.clientHeight;
+            const bodyWidth = document.body.clientWidth;
+            const elHeight = el.offsetHeight;
+            const elWidth = el.offsetWidth;
+
+
+
+            // Rechne die Mitte aus
+            const top = (bodyHeight - elHeight) / 2;
+            const left = (bodyWidth - elWidth) / 2;
+
+            // Setze Position
+            el.style.top = top + 'px';
+            el.style.left = left + 'px';
+        }
+
+        window.addEventListener('load', zentriereElement);
+        window.addEventListener('resize', zentriereElement);
+    </script>
+</body>
+
+</html>

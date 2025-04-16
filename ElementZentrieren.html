@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vertikal zentrieren mit JavaScript</title>
+    <style>
+        #x {
+            width: 200px;
+            height: 100px;
+            background-color: #f8a;
+            position: relative;
+        }
+
+        .wrapper {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            .box {
+                background-color: rgb(69 164 181);
+                border-radius: 5px;
+                padding: 10px;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">center me!</div>
+    </div>
+
+    <script>
+        /*function vertikalZentrieren() {
+          const el = document.getElementById('x');
+          const bodyHeight = document.body.clientHeight;
+          const elHeight = el.offsetHeight;
+          const marginTop = (bodyHeight - elHeight) / 2;
+          el.style.marginTop = marginTop + 'px';
+        }
+    
+        // Beim Laden zentrieren
+        window.addEventListener('load', vertikalZentrieren);
+    
+        // Optional: auch bei Größenänderung der Seite neu zentrieren
+        window.addEventListener('resize', vertikalZentrieren);*/
+    </script>
+</body>
+
+</html>
